@@ -1,10 +1,10 @@
 
 <div class="container">
     <header class="jumbotron">
-         
+
     <form>
-        
-            
+
+
               <input matInput placeholder="Name" [formControl]="nameFormControl" />
               <mat-error *ngIf="nameFormControl.hasError('minlength')">
                 Name must be at least 4 characters long.
@@ -12,9 +12,9 @@
               <mat-error *ngIf="nameFormControl.hasError('required')">
                 Name is <strong>required</strong>
               </mat-error>
-        
-        
-           
+
+
+
               <input matInput placeholder="Email" [formControl]="emailFormControl"/>
               <mat-error *ngIf="emailFormControl.hasError('email')">
                 Please enter a valid email address
@@ -22,8 +22,8 @@
               <mat-error *ngIf="emailFormControl.hasError('required')">
                 Email is <strong>required</strong>
               </mat-error>
-          
-        
+
+
             <button
               mat-raised-button
               [disabled]="emailFormControl.invalid || nameFormControl.invalid || loading"
@@ -32,9 +32,36 @@
             >
               {{buttionText}}
             </button>
-       
+
+            <!--<div>
+              <input type="text" [(ngModel)]="userName">
+              <button (click)="setUserName()" >Set username</button>
+            </div>
+
+
+              <a (userNameEvent)="userNameUpdate($event)" *ngIf="!userName"></a>
+              <div class="chatbox">
+                <div class="chatbox__user-list">
+                  <h2>User list</h2>
+                  <div class="chatbox__user--active" *ngFor="let user of userList" >
+                    <p>{{ user }}</p>
+                  </div>
+                </div>-->
+                <div class="messages_list">
+                  <div class="chatbox__messages" *ngFor="let msg of messageList" [ngClass]="{mine: msg.mine}">
+
+                      <div class="message-box">
+
+                        <p class="messagee">{{ msg.messagee }}</p>
+                      </div>
+
+                </div>
+              </div>
+                <input type="text" [(ngModel)]="messagee">
+                <button (click)="sendMessage()">Send</button>
+
         </form>
-  
-   
+
+
 </header>
 </div>

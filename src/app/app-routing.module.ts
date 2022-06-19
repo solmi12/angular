@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'tutorials', pathMatch: 'full' },
   { path: 'reunions', component: ReunionListComponent },
   { path: 'reunions/:id', component: ReunionComponent },
+  { path: 'reunions/:rName', component: ReunionComponent },
   { path: 'add', component: AddReunionComponent}
 ];
 
